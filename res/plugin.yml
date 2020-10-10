@@ -1,0 +1,19 @@
+name: "WorldNote"
+main: tw.mayortw.worldnote.WorldNotePlugin
+version: 0.1
+description: "Add offline notes to worlds"
+author: "R26"
+api-version: 1.13
+softdepend:
+    - Multiverse-Core
+
+commands:
+    worldnote:
+        aliases: ["wn"]
+        usage: /worldnote <world> [ -d | <note> ]
+
+permissions:
+    worldnote.edit:
+        default: op
+    worldnote.read:
+        default: true
