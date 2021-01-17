@@ -1,6 +1,6 @@
 name: "WorldNote"
 main: tw.mayortw.worldnote.WorldNotePlugin
-version: 0.1
+version: 0.2
 description: "Add offline notes to worlds"
 author: "R26"
 api-version: 1.13
