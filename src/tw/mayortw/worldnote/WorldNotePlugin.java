@@ -18,6 +18,7 @@ import org.bukkit.World;
 
 import com.onarandombox.MultiverseCore.api.MVPlugin;
 import com.onarandombox.MultiverseCore.api.MVWorldManager;
+import com.onarandombox.MultiverseCore.api.MultiverseWorld;
 
 import java.io.File;
 import java.io.IOException;
@@ -110,8 +111,13 @@ public class WorldNotePlugin extends JavaPlugin implements Listener {
 
     private void saveWorldNotes(World world) {
         ConfigurationSection section = getCreateSection(config, world.getUID().toString());
-        if(mvWorldManager != null)
-            section.set("alias", mvWorldManager.getMVWorld(world).getAlias());
+        if(mvWorldManager != null) {
+            MultiverseWorld mvWorld = mvWorldManager.getMVWorld(world);
+            if(mvWorld != null)
+                section.set("alias", mvWorld.getAlias());
+            else
+                section.set("alias", null);
+        }
         section.set("name", world.getName());
     }
 
